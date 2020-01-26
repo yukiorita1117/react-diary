@@ -9,16 +9,12 @@ import {
 import AppContext from "../../contexts/AppContext";
 import { timeCurrentIso8601 } from "../../utils";
 
-const StyledH4 = styled.h4`
-  margin-top: 32px;
-`;
-
 const StyledButton = styled.button`
   margin-right: 4px;
 `;
 
 //stateもdispatchもオブジェクトなので{}でくくる
-const EventForm = () => {
+const Diary = () => {
   const { state, dispatch } = useContext(AppContext);
   //ここのstateはreducerが勝手に検知して変えてくれる(イベント発火時に)
   const [title, setTitle] = useState("");
@@ -69,7 +65,6 @@ const EventForm = () => {
   const unCreatable = title === "" || body === "";
   return (
     <>
-      <StyledH4>イベント作成フォーム</StyledH4>
       <form>
         <div className="form-group">
           <label htmlFor="formEventTitle">Title</label>
@@ -110,11 +105,11 @@ const EventForm = () => {
           onClick={deleteAllOperationLogs}
           disabled={state.operationLogs.length === 0}
         >
-          全ての操作ログを削除する
+          全てのCalenderログを削除する
         </StyledButton>
       </form>
     </>
   );
 };
 
-export default EventForm;
+export default Diary;

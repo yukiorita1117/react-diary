@@ -2,24 +2,16 @@ import React, { useContext } from "react";
 import Event from "../Event";
 import styled from "styled-components";
 import AppContext from "../../contexts/AppContext";
-const EventsWrapper = styled.div`
+const EntriesWrapper = styled.div`
   margin-top: 24px;
 `;
 
-const Events = () => {
+const Entries = () => {
   const { state } = useContext(AppContext);
   return (
     <>
-      <EventsWrapper>
-        {/* //useContextを使おうって話
-        <div>{value}</div> */}
-        {/* //Old Context API 記法
-        <AppContext.Consumer>
-          {value => {
-            return <div>{value}</div>;
-          }}
-        </AppContext.Consumer> */}
-        <h4>イベント一覧</h4>
+      <EntriesWrapper>
+        <h1>Entries</h1>
         <table className="table table-hover">
           <thead>
             <tr>
@@ -35,9 +27,9 @@ const Events = () => {
             ))}
           </tbody>
         </table>
-      </EventsWrapper>
+      </EntriesWrapper>
     </>
   );
 };
 
-export default Events;
+export default Entries;
