@@ -51,16 +51,6 @@ const Diary = () => {
     }
   };
 
-  const deleteAllOperationLogs = e => {
-    e.preventDefault();
-    const result = window.confirm(
-      "本当に全ての操作ログを削除してもいいですか？"
-    );
-    if (result) {
-      dispatch({ type: DELETE_ALL_OPERATION_LOGS });
-    }
-  };
-
   //disabledはtrueの時に非活性化する
   const unCreatable = title === "" || body === "";
   return (
@@ -91,21 +81,14 @@ const Diary = () => {
           onClick={addEvent}
           disabled={unCreatable}
         >
-          イベント作成
+          Diary作成
         </StyledButton>
         <StyledButton
           className="btn btn-danger"
           onClick={deleteAllEvents}
           disabled={state.events.length === 0}
         >
-          全てのイベントを削除する
-        </StyledButton>
-        <StyledButton
-          className="btn btn-danger"
-          onClick={deleteAllOperationLogs}
-          disabled={state.operationLogs.length === 0}
-        >
-          全てのCalenderログを削除する
+          全てのDiaryを削除する
         </StyledButton>
       </form>
     </>

@@ -1,10 +1,3 @@
-//state:前の状態(未定義の可能性もあるので初期化する)
-//サンプルイベント
-// events = [
-//   { id: 1, title: "タイトル1", body: "内容だよ" },
-//   { id: 1, title: "タイトル２", body: "内容だよ!!" }
-// ];
-
 import { CREATE_EVENT, DELETE_EVENT, DELETE_ALL_EVENT } from "../actions";
 
 const events = (state = [], action) => {
