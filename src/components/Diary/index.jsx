@@ -8,6 +8,7 @@ import {
 } from "../../actions";
 import AppContext from "../../contexts/AppContext";
 import { timeCurrentIso8601 } from "../../utils";
+import Button from "@material-ui/core/Button";
 
 const StyledButton = styled.button`
   margin-right: 4px;
@@ -90,6 +91,9 @@ const Diary = () => {
         >
           全てのDiaryを削除する
         </StyledButton>
+        <Button variant="contained" color="primary">
+          Hello World
+        </Button>
       </form>
     </>
   );

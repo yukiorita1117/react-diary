@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import Event from "../Event";
 import styled from "styled-components";
 import AppContext from "../../contexts/AppContext";
+import Card from "../Card";
+
 const EntriesWrapper = styled.div`
   margin-top: 24px;
 `;
@@ -12,21 +13,13 @@ const Entries = () => {
     <>
       <EntriesWrapper>
         <h1>Entries</h1>
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Title</th>
-              <th scope="col">Body</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            {state.events.map((event, index) => (
-              <Event key={index} event={event} />
-            ))}
-          </tbody>
-        </table>
+        {state.events.map((event, index) => (
+          <>
+            <Card key={index} event={event} />
+            {/* TODO Cardスタイルできない問題どうにかする */}
+            <br />
+          </>
+        ))}
       </EntriesWrapper>
     </>
   );
