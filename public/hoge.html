@@ -1,0 +1,56 @@
+<!-- * 月を1～12の数値として乱数で生成させ、その英語表現をキーボードから入力させるプログラムを作成してください。
+* 乱数で生成した月の英語表記と入力した英単語が一致したら「正解」とアラートに出力してください。
+* また、プレーヤーが望む限り何度でも繰り返せるようにし、同一月を連続して出題しないようにしてください。
+*
+* ※入力を受け付ける際は、prompt()を使用する事。 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <script>
+      var isStart = true;
+      var prebMonth = 0;
+      while (isStart) {
+        const randomNum = Math.random() * (12 - 1) + 1;
+        const roundNum = Math.round(randomNum);
+        if (prebMonth === roundNum) {
+          break;
+        }
+
+        const monthArray = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Api",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Nov",
+          "Dec"
+        ];
+
+        const pairMonth = monthArray[roundNum - 1];
+
+        const text = prompt(`${roundNum}月は英語で何でしょう？`);
+        prebMonth = roundNum;
+        if (text === pairMonth) {
+          alert("正解");
+          isStart = prompt(
+            `もう一度やりますか？やるならtrue、やめるならfalseを入力してください。`
+          );
+        } else {
+          alert("不正解");
+          isStart = prompt(
+            `もう一度やりますか？やるならtrue、やめるならfalseを入力してください。`
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
