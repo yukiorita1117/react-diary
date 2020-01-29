@@ -1,4 +1,6 @@
 import React from "react";
+import styled from "styled-components";
+
 import { useEffect, useReducer } from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
@@ -43,26 +45,55 @@ const Menu = () => {
     localStorage.setItem(APP_KEY, JSON.stringify(state));
   }, [state]);
 
-  const liStyle = {
-    display: "inline",
-    width: "100px"
-  };
+  const NavList = styled.ul`
+    display: flex;
+    margin: 12px;
+    position: relative;
+    vertical-align: middle;
+  `;
+
+  const NavItem = styled.li`
+    border: 1px solid #428bca;
+    border-radius: 0;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    background-color: #fff;
+    color: #428bca;
+    :first-child {
+      border-radius: 4px 0 0 4px;
+    }
+    :last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    :hover {
+      background-color: #428bca;
+      text-decoration: none;
+      a:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  `;
 
   return (
     <Router>
       <AppContext.Provider value={{ state, dispatch }}>
-        <div style={{ width: "500px", textAlign: "left" }}>
-          <ul style={{ display: "flex" }}>
-            <li style={liStyle}>
+        <div style={{ width: "500px", margin: 0 }}>
+          <NavList>
+            <NavItem>
               <Link to="/">Entries</Link>
-            </li>
-            <li style={liStyle}>
+            </NavItem>
+            <NavItem>
               <Link to="/Calender">Calender</Link>
-            </li>
-            <li style={liStyle}>
+            </NavItem>
+            <NavItem>
               <Link to="/Diary">Diary</Link>
-            </li>
-          </ul>
+            </NavItem>
+          </NavList>
 
           <div style={{ marginLeft: "50px" }}>
             <Route path="/" exact component={topPage} />

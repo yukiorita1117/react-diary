@@ -3,8 +3,7 @@ import styled from "styled-components";
 import {
   CREATE_EVENT,
   DELETE_ALL_EVENT,
-  ADD_OPERATION_LOG,
-  DELETE_ALL_OPERATION_LOGS
+  ADD_OPERATION_LOG
 } from "../../actions";
 import AppContext from "../../contexts/AppContext";
 import { timeCurrentIso8601 } from "../../utils";

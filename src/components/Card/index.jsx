@@ -56,7 +56,7 @@ const Cards = ({ event }) => {
       });
     }
   };
-  //DBに保存して、DBの値をCardコンポーネントが呼びに行かないと常に今日の日付になる？
+  // TODO DBに保存して、DBの値をCardコンポーネントが呼びに行かないと常に今日の日付になる？
   const date = currentDate().toString();
 
   return (
