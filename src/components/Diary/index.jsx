@@ -13,6 +13,10 @@ const StyledButton = styled.button`
   margin-right: 4px;
 `;
 
+const StyledTextarea = styled.textarea`
+  height: 400px !important;
+`;
+
 //stateもdispatchもオブジェクトなので{}でくくる
 const Diary = () => {
   const { state, dispatch } = useContext(AppContext);
@@ -62,18 +66,20 @@ const Diary = () => {
             className="form-control"
             id="formEventTitle"
             value={title}
+            placeholder="No Title"
             onChange={e => setTitle(e.target.value)}
           ></input>
         </div>
 
         <div className="form-group">
           <label htmlFor="formEventBody">Body</label>
-          <textarea
+          <StyledTextarea
             className="form-control"
             id="formEventBody"
             value={body}
+            placeholder="No Contents"
             onChange={e => setBody(e.target.value)}
-          ></textarea>
+          ></StyledTextarea>
         </div>
 
         <StyledButton

@@ -1,14 +1,47 @@
 import React, { useContext } from "react";
+import styled from "styled-components";
+
 import AppContext from "../../contexts/AppContext";
-import { currentDate } from "../../utils";
+import { currentMonth, currentDay, currentWeek } from "../../utils";
 import OperationLog from "../OperationLog";
 
 const Calender = () => {
   const { state } = useContext(AppContext);
+
+  const H1 = styled.h1`
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+  `;
+
+  const Wrapper = styled.div`
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  `;
+  const CurrentMonth = styled.p`
+    color: #007bff;
+  `;
+  const CurrentDate = styled.p`
+    color: #007bff;
+    font-size: 10rem;
+    line-height: 140px;
+}
+  `;
+  const CurrentWeek = styled.p`
+    color: #007bff;
+  `;
   return (
     <>
-      <h1>Calender</h1>
-      <div>{currentDate()}</div>
+      {/* <H1>Calender</H1> */}
+      <Wrapper>
+        <CurrentMonth>{currentMonth()}</CurrentMonth>
+        <CurrentDate>{currentDay()}</CurrentDate>
+        <CurrentWeek>{currentWeek()}</CurrentWeek>
+      </Wrapper>
       {/* <table className="table table-hover">
         <thead>
           <tr>

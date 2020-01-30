@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
+import styled from "styled-components";
 import { DELETE_EVENT, ADD_OPERATION_LOG } from "../../actions";
 import AppContext from "../../contexts/AppContext";
 import { timeCurrentIso8601 } from "../../utils";
-import styled from "styled-components";
 import { currentDate } from "../../utils";
 
 import Button from "@material-ui/core/Button";

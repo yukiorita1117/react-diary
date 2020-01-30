@@ -13,3 +13,34 @@ export const currentDate = () => {
 
   return `${year} ${month}/${day} ${dayOfWeekStr}`;
 };
+
+export const currentMonth = () => {
+  const MonthStr = [
+    "January",
+    "Febrary",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ][new Date().getMonth()];
+  return MonthStr;
+};
+export const currentDay = () => new Date().getDate();
+export const currentWeek = () => {
+  const dayOfWeekStr = [
+    "Sunday",
+    "Monday",
+    "Tueday",
+    "Wednesday",
+    "Thuesday",
+    "Friday",
+    "Satday"
+  ][new Date().getDay()];
+  return dayOfWeekStr;
+};
