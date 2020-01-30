@@ -29,7 +29,6 @@ const Calender = () => {
     color: #007bff;
     font-size: 10rem;
     line-height: 140px;
-}
   `;
   const CurrentWeek = styled.p`
     color: #007bff;
