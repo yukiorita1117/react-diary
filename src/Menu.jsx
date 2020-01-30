@@ -50,6 +50,7 @@ const Menu = () => {
     margin: 12px;
     position: relative;
     vertical-align: middle;
+    padding-right: 40px;
   `;
 
   const NavItem = styled.li`
@@ -82,7 +83,7 @@ const Menu = () => {
   return (
     <Router>
       <AppContext.Provider value={{ state, dispatch }}>
-        <div style={{ width: "500px", margin: 0 }}>
+        <div>
           <NavList>
             <NavItem>
               <Link to="/">Entries</Link>
@@ -95,7 +96,8 @@ const Menu = () => {
             </NavItem>
           </NavList>
 
-          <div style={{ marginLeft: "50px" }}>
+          {/* margin-top: 40px; */}
+          <div style={{}}>
             <Route path="/" exact component={topPage} />
             <Route path="/Calender" exact component={page1} />
             <Route path="/Diary" exact component={page2} />

@@ -8,13 +8,6 @@ import OperationLog from "../OperationLog";
 const Calender = () => {
   const { state } = useContext(AppContext);
 
-  const H1 = styled.h1`
-    display: flex;
-    flex-direction: column;
-    justify-content: center !important;
-    align-items: center;
-  `;
-
   const Wrapper = styled.div`
     margin-top: 40px;
     display: flex;
