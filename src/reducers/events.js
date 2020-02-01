@@ -9,7 +9,7 @@ const events = (state = [], action) => {
       const id = length === 0 ? 1 : state[length - 1].id + 1;
 
       //stateを展開して、id挿入し、eventも展開して挿入
-      return [...state, { ...state, id, ...event }];
+      return [{ ...state, id, ...event }, ...state];
     case DELETE_EVENT:
       return state.filter(event => event.id !== action.id);
     case DELETE_ALL_EVENT:

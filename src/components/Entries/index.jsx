@@ -25,7 +25,7 @@ const Entries = () => {
         {state.events.map((event, index) => (
           <>
             <Card key={index} event={event} />
-            {/* TODO Cardスタイルできない問題どうにかする */}
+            {/* TODO CardWrapper作ってstyleする */}
             <br />
           </>
         ))}
