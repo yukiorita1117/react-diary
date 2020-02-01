@@ -19,12 +19,12 @@ const topPage = () => (
 );
 
 const page1 = () => (
-  <div>
+  <div className="container">
     <Calender />
   </div>
 );
 const page2 = () => (
-  <div>
+  <div className="container">
     <Diary />
   </div>
 );
@@ -63,6 +63,7 @@ const Menu = () => {
     text-align: center;
     background-color: #fff;
     color: #428bca;
+
     :first-child {
       border-radius: 4px 0 0 4px;
     }
